@@ -13,7 +13,7 @@ const getNewUrls = (hrefs, url) => {
   const midFix = url[url.length-1] !== '/' ? '/' : '';
   hrefs.map(href => href.match(urlExp)[0].slice(1, -1)).forEach(result => {
     if(result[0] === '/'){
-      // newUrls.add(`${url}${midFix}${result.slice(1)}`);
+      newUrls.add(`${url}${midFix}${result.slice(1)}`);
     } else if(result[0] === '#'){
       //do nothing
     } else{
@@ -82,7 +82,7 @@ const crawl = async (url, keyword, resultMap, depth) => {
 
 const crawlWebsiteWithKeyword = async () => {
   const resultMap = new Map();
-  await crawl('http://stakhi.in:3000/', 'github', resultMap, 0);
+  await crawl('http://stakhi.in:3000/', 'Saagar', resultMap, 0);
 
 
   let count = 0;
